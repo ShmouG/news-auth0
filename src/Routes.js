@@ -15,12 +15,14 @@ const handleAuthentication = (nextState, replace) => {
 
 const Routes = () => (
   <Router history={history} component={Home}>
+    <div className="container-fluid">
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />
       }}/>
+    </div>
   </Router>
 );
 
