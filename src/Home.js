@@ -33,7 +33,7 @@ class Home extends Component {
         {
           !isAuthenticated() && (
             <div className="container-fluid">
-              <h5>Hottest News in Da Hood!!!</h5>
+              <h5>News Feed at your finger tips!</h5>
               <h5>
                 You are not logged in! Please{' '}
                 <button 
