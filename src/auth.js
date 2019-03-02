@@ -7,7 +7,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'shmoug.auth0.com',
     clientID: '7aneVrEZ1nHfWNH5DEWlzceKyp036HQO',
-    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://appbaseio-apps.github.io/reactivesearch-auth0-example/callback',
+    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://peaceful-mountain-25341.herokuapp.com/callback',
     audience: 'https://shmoug.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid'
