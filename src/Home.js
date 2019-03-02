@@ -14,7 +14,7 @@ class Home extends Component {
     // calls the isAuthenticated method in authentication service
     const { isAuthenticated } = this.props.auth;
     return (
-      <div>
+      <div className="container-fluid">
         {
           isAuthenticated() &&
           <div className="container column">
