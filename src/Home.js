@@ -17,7 +17,7 @@ class Home extends Component {
       <div className="container-fluid">
         {
           isAuthenticated() &&
-          <div className="container column">
+          <div className="container-fluid">
             <h5>
               You are logged in!{' '}
               <button
