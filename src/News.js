@@ -15,24 +15,28 @@ import Error from './Error';
     const url = `https://newsapi.org/v2/${this.props.news.type}?${this.props.news.query}&apiKey=099b80dbd2ef4ad5afd70a252c2749e4`;
 
     fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({
-          news: data.articles
-        })
-      })
-      .catch((error) => {
-        this.setState({
-          error: true
-        })
-      });
+  .then((response) => {
+    // Add this check and throw an error if it fails
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    this.setState({
+      news: data.articles
+    })
+  })
+  .catch((error) => {
+    this.setState({
+      error: true
+    })
+  });
   }
 
    renderItems() {
     if (!this.state.error) {
-      return this.state.news.length> 0 && this.state.news.map((item) => (
+      return this.state.news.map((item) => (
         <NewSingle key={item.url} item={item} />
       ));
     } else {
