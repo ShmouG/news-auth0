@@ -34,7 +34,7 @@ class News extends Component {
 
     renderItems() {
         if (!this.state.error) {
-            return this.state.news.map((item) => (
+            return this.state.news.map(item => (
                 <NewSingle key={item.url} item={item} />
             ));
         } else {
