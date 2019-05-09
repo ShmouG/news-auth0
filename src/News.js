@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NewSingle from './NewSingle';
 import Error from './Error';
 
-class News extends Component {
+ class News extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,9 +30,9 @@ class News extends Component {
       });
   }
 
-  renderItems() {
+   renderItems() {
     if (!this.state.error) {
-      return this.state.news.map((item) => (
+      return this.state.news.length> 0 && this.state.news.map((item) => (
         <NewSingle key={item.url} item={item} />
       ));
     } else {
